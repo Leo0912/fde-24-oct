@@ -1,6 +1,8 @@
-# Session 3 lab: from prototype to a service the platform team will run
+# Session 3 lab: Python & Production Engineering
 
-**AI Forward Deployed Engineering · IIT Delhi × Varsity · Session 3 (24 Oct 2026): Python & Production Engineering**
+**From prototype to a service the platform team will run.**
+
+**AI Forward Deployed Engineering · IIT Delhi × Varsity · Session 3 · Sat 24 Oct 2026**
 
 Example Bank (fictional) has a complaint-triage prototype, `triage_prototype.py`. It works on a laptop.
 The Head of Retail Ops wants it live; the Sr. Platform Engineer won't run a script; the CISO wants an
