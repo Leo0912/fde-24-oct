@@ -23,13 +23,13 @@ This full lab keeps that idea, then adds the production engineering pieces aroun
 
 ### 1. Optional warm-up
 
-Pick the primer that matches the topic you want to understand first:
+If you want the concept-first path before the full implementation, run the primers in the same order as Session 3:
 
-- L1 contract: `primer/l1-pydantic-mini/`
-- L2 service: `primer/l2-async-fastapi-mini/`
-- L3 observability: `primer/l3-observability-mini/`
+- `primer/l1-pydantic-mini/` → contract
+- `primer/l2-async-fastapi-mini/` → service
+- `primer/l3-observability-mini/` → observability
 
-Start with the primer if you want the concept first; then come back to the full lab.
+Then come back to the full lab.
 
 ### 2. Guided L1 walkthrough
 

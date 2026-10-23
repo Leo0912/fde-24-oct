@@ -4,6 +4,16 @@ These primers are **small, separate warm-ups** for Session 3. Learners run comma
 
 Use them when a topic feels too busy in the full lab and you want the idea first.
 
+## Suggested order
+
+The primers are designed to match the Session 3 sequence:
+
+1. **L1 Contract** → validate model output before trusting it
+2. **L2 Service** → call the model safely in an async API
+3. **L3 Observability** → log one safe, searchable audit line per request
+
+If a learner is short on time, they can still jump straight to one topic.
+
 ## Pick the topic you need
 
 ### L1 · Contract and Pydantic
@@ -43,6 +53,6 @@ bash run.sh all
 
 ## Best learner flow
 
-- Start with the primer for the topic that feels abstract.
-- Then come back to the full lab in the repo root.
+- Best sequence: **L1 primer → L2 primer → L3 primer → full lab**.
+- If one topic already feels clear, skip straight to the next one.
 - The primers teach the **why**; the full lab teaches the **how in a real service**.

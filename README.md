@@ -12,13 +12,17 @@ audit trail with no account numbers in the logs. You'll turn it into a typed, lo
 
 ### Path A · Primers first (recommended if a topic feels abstract)
 
-Start with `primer/README.md`, or jump straight to the topic you need:
+Start with `primer/README.md`, or follow the same sequence as the full lab:
 
-- `primer/l1-pydantic-mini/` — contract and why Pydantic helps
-- `primer/l2-async-fastapi-mini/` — async, timeout and FastAPI
-- `primer/l3-observability-mini/` — request IDs, masking and JSON audit logs
+1. `primer/l1-pydantic-mini/` — **L1 Contract**: why messy LLM output needs a contract
+2. `primer/l2-async-fastapi-mini/` — **L2 Service**: async calls, timeouts and FastAPI
+3. `primer/l3-observability-mini/` — **L3 Observability**: request IDs, masking and JSON audit logs
 
-These are short, concept-first warm-ups. Then come back to this main lab once the idea lands.
+These are short, concept-first warm-ups. The simplest learner flow is:
+
+**L1 primer → L2 primer → L3 primer → full lab**
+
+Then come back to this main lab once the idea lands.
 
 ### Path B · Full lab / deep dive
 
@@ -39,7 +43,7 @@ logging, Git and Docker.
 
 **Live lab:** **`lab/L1-live.md`** (L1 primer, ~8 min), then **`lab/L2-live.md`** (L2 primer: async, timeout, FastAPI, ~12–15 min). Afterwards, at your own pace: **`lab/L1-deep-dive.md`**, then **`lab/L2-deep-dive.md`**. Every step is one command; you write no code during the session.
 
-**Short version:** primer first if you want the idea; `FULL-LAB.md` if you want the full hands-on path.
+**Short version:** run the primers in order for the concept path; use `FULL-LAB.md` for the deeper hands-on path.
 
 No API key is needed: an offline stub model answers by default. Everything here is fictional (the bank,
 customers, accounts and teams). Never paste real customer data into this lab.
