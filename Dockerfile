@@ -8,7 +8,8 @@
 # TODO 3: `COPY . .` copies everything, including .env and .git. Copy only what the app needs,
 #         and add a .dockerignore.
 # TODO 4: it runs as root. Create a user and switch to it.
-# TODO 5: no health check. Add a HEALTHCHECK with --interval=5s that calls /healthz (slim images have no curl; use python).
+# TODO 5: no health check. Add a HEALTHCHECK with --interval=5s --timeout=3s --start-period=5s that calls /healthz
+#         (slim images have no curl; use python).
 
 FROM python:3.12
 ENV SERVICE_API_KEY=demo-key-123

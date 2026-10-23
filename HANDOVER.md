@@ -19,3 +19,4 @@ TODO: the fields in each log line, what is masked, and how to follow one request
 ## Known limits
 
 TODO: what this pilot does not do yet (be honest: this is what the CISO will ask about).
+TODO (hint, replace with your own words): a 422 response echoes the rejected input; uvicorn's own log lines aren't masked; the stub model, not a real one; no login or rate limiting on the API.

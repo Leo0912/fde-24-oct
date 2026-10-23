@@ -100,7 +100,7 @@ class LiveLLM:
         self._client = AsyncOpenAI(
             api_key=os.environ.get("LLM_API_KEY") or os.environ["GEMINI_API_KEY"],
             base_url=os.environ.get("LLM_BASE_URL", "https://generativelanguage.googleapis.com/v1beta/openai/"),
-            timeout=20,
+            timeout=4,  # below the service's own 5 s budget (TRIAGE_TIMEOUT_S), so the SDK gives up first
             max_retries=1,
         )
 

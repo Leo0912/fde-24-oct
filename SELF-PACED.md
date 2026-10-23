@@ -8,6 +8,10 @@ Work in your codespace. In Colab you can do L3; do L4 in a codespace.
 **Why:** the CISO's rule is that every decision has an audit trail, and no account numbers reach the logs.
 A `print()` line can't be searched, joined or trusted. One JSON line per request can.
 
+**See it fail first (1 min):** run `python triage_prototype.py | head -2` from the lab folder. Look at the first
+line: the full account number, no request ID, nothing a machine can search. At the end of L3, compare it with
+your own JSON line.
+
 1. **L3.1 `mask()`** in `app/logging_setup.py`: replace each `EB-` + 10 digits with `EB-******` + the last 4.
    Use `ACCOUNT_RE.sub(...)`.
 2. **L3.2 `JsonFormatter.format()`**: build a dict with `ts` (UTC, ISO 8601), `level`, `msg`, plus every
@@ -36,7 +40,8 @@ git switch -c feat/triage-service
 cp .env.example .env            # local settings; must never be committed
 echo ".env" >> .gitignore       # now git ignores it
 git status                      # .env must NOT be listed
-git add -A && git commit -m "feat: triage service with contract, timeout and JSON logs"
+git add app/ .gitignore         # stage deliberately: never `git add -A` with untracked files around
+git commit -m "feat: triage service with contract, timeout and JSON logs"
 git push -u origin feat/triage-service
 ```
 
@@ -46,6 +51,14 @@ Check: `bash grade.sh l4` (the Git part).
 ## L4b Docker (15 min)
 
 **Why:** the platform team runs containers, not scripts. They'll check the base image, the user, secrets and health.
+
+**See it fail first (2 min):** build the starter Dockerfile as it is, and look at it the way the platform team will:
+
+```bash
+docker build -t s03-before .
+docker history --no-trunc s03-before | grep SERVICE_API_KEY   # the key is readable in the image
+docker run --rm s03-before id -u                              # 0 means it runs as root
+```
 
 Fix the five TODOs in `Dockerfile`:
 
@@ -73,7 +86,7 @@ Fill in `HANDOVER.md`: half a page for the Sr. Platform Engineer. Then:
 
 ```bash
 bash grade.sh all
-git add -A && git commit -m "docs: handover note" && git push
+git add Dockerfile .dockerignore HANDOVER.md && git commit -m "docs: handover note" && git push
 ```
 
 Clean up: `docker system prune -f`, stop your codespace, and delete it once you've finished.
