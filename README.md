@@ -64,6 +64,7 @@ their products: use only the fictional data here. The grader always uses the off
 | `tests/` | What the grader checks |
 | `Dockerfile` | L4b: works, but the platform team would refuse it. Fix it |
 | `SELF-PACED.md` | Step-by-step guide for L3, L4 and the handover |
+| `GLOSSARY.md` | One-page glossary for L1/L2/L3/L4 and lab terms |
 | `HANDOVER.md` | Your handover note (template) |
 
 ## Stuck?
