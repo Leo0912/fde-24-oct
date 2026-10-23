@@ -3,7 +3,8 @@
 #   bash lab.sh l1 fail | check | show | apply | pass | try          (L1 Contract)
 #   bash lab.sh l2 fail | check | show | apply | pass | try | serve  (L2 Service)
 #   bash lab.sh l3 fail | check | show | apply | pass | try | serve  (L3 Observability)
-#   bash lab.sh reset l1 | l2 | l3                                   (put the TODO version back, e.g. for the assignment)
+#   bash lab.sh l4 fail | check | show | apply | pass | try          (L4 Ship)
+#   bash lab.sh reset l1 | l2 | l3 | l4                              (put the TODO version back, e.g. for the assignment)
 set -euo pipefail
 cd "$(dirname "$0")"
 PY=${PY:-python}
@@ -61,6 +62,23 @@ case "${1:-}:${2:-}" in
             echo "  Then: Ports tab -> 8000 -> globe -> /docs -> POST /triage -> Try it out. Watch this terminal. Ctrl+C to stop."
             echo
             "$PY" -m uvicorn app.main:app --port 8000 ;;
+  l4:fail)  RUNG="L4 Ship"; hdr "step 1 · SEE IT FAIL" "Objective: a careless commit leaks .env; an image that builds is still refused. In the deck: Ship topic, 'Git in the customer's repo' and '\"It builds, so we're done\"'."
+            "$PY" lab/l4/fail.py ;;
+  l4:check) RUNG="L4 Ship"; hdr "steps 2 and 5 · RUN THE CHECKS" "Objective: see what the L4 checks look for, and why they fail or pass. In the deck: Ship topic, 'Your Git workflow, step by step' and 'What is Docker?'."
+            "$PY" lab/l4/check.py ;;
+  l4:show)  RUNG="L4 Ship"; hdr "step 3 · READ THE FIX" "Objective: the deliberate commit, and the Dockerfile line by line. In the deck: Ship topic, 'Your Git workflow, step by step' and '\"It builds, so we're done\"'."
+            "$PY" lab/l4/show.py ;;
+  l4:apply) RUNG="L4 Ship"; hdr "step 4 · APPLY THE FIX" "Objective: fix the Dockerfile, add .dockerignore, and commit deliberately (in the twin)."
+            "$PY" lab/l4/apply.py ;;
+  l4:pass)  RUNG="L4 Ship"; hdr "step 5 · SEE IT PASS" "Objective: the same checks as step 1, now passing. In the deck: Ship topic, '\"It builds, so we're done\"'."
+            "$PY" lab/l4/pass.py ;;
+  l4:try)   RUNG="L4 Ship"; hdr "step 6 · TRY IT" "Objective: the whole service in the shipped image: secret at run time, one request, its log line. In the deck: Ship topic, 'Where a key leaks, and where it belongs'."
+            "$PY" lab/l4/try_.py ;;
+  reset:l4) echo "HOW THIS STEP RUNS: copies lab/l4/Dockerfile_start -> Dockerfile, deletes .dockerignore and the twin (fde-s03-l4-twin in the temp folder), removes the lab images if Docker is here"
+            cp lab/l4/Dockerfile_start Dockerfile; rm -f .dockerignore
+            rm -rf "$("$PY" -c 'import tempfile; print(tempfile.gettempdir())')/fde-s03-l4-twin"
+            command -v docker >/dev/null 2>&1 && docker rmi -f s03-before s03-triage >/dev/null 2>&1 || true
+            echo "  ↩️  Dockerfile is back to the starter (5 TODOs), .dockerignore and the twin are gone (for the write-it-yourself assignment)." ;;
   reset:l3) echo "HOW THIS STEP RUNS: copies lab/l3/logging_start.py -> app/logging_setup.py and lab/l3/main_start.py (L2 done, L3 TODOs) -> app/main.py"
             cp lab/l3/logging_start.py app/logging_setup.py; cp lab/l3/main_start.py app/main.py
             echo "  ↩️  app/logging_setup.py and app/main.py are back to the L3 TODO version (for the write-it-yourself assignment)." ;;
