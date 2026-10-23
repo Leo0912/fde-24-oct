@@ -33,7 +33,7 @@ Use this when you want the full Session 3 experience: typed models, service endp
 logging, Git and Docker.
 
 - Start here: `FULL-LAB.md`
-- Guided L1 walkthrough: `lab/L1.md`
+- Guided L1 walkthrough: `lab/L1-deep-dive.md`
 - Write-it-yourself checks: `bash grade.sh l1`, then `l2`, `l3`, `l4`
 
 | Rung | When | You build | Check |
@@ -44,7 +44,7 @@ logging, Git and Docker.
 | **L4 Ship** | Self-paced | Git branch + PR; a Dockerfile the platform team would accept | `bash grade.sh l4` |
 | **Handover** | Self-paced | `HANDOVER.md`, half a page for the Sr. Platform Engineer | `bash grade.sh handover` |
 
-**Live lab:** if you want the deep dive, follow `lab/L1.md`. Every step is one command (`bash lab.sh …`); you write no code during the session.
+**Live lab:** start with **`lab/L1-live.md`** (L1, the short primer, ~8 min). Afterwards, at your own pace: **`lab/L1-deep-dive.md`**. Every step is one command; you write no code during the session.
 
 **Short version:** primer first if you want the idea; `FULL-LAB.md` if you want the full hands-on path.
 

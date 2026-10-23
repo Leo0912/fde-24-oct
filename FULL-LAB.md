@@ -43,7 +43,7 @@ bash lab.sh l1 apply
 bash lab.sh l1 pass
 ```
 
-This uses `lab/L1.md` to explain exactly what is happening and why.
+This uses `lab/L1-deep-dive.md` to explain exactly what is happening and why.
 
 ### 3. Write-it-yourself version
 
@@ -77,7 +77,7 @@ After L1, move on to:
 
 ## Important files in the full lab
 
-- `lab/L1.md` — guided walkthrough of the deep-dive L1 story
+- `lab/L1-deep-dive.md` — guided walkthrough of the deep-dive L1 story
 - `app/models.py` — the L1 contract learners eventually implement
 - `app/main.py` — the L2 and L3 service code
 - `tests/` — what `grade.sh` checks

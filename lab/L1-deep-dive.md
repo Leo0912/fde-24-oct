@@ -1,9 +1,8 @@
-# L1 · Contract: never trust the model's reply
+# L1 deep dive (self-paced) · Contract: never trust the model's reply
 
-**Optional warm-up first:** if you want the shortest concept-first version before this deep dive, run `primer/l1-pydantic-mini/` and `bash run.sh all` from that folder.
-
-**About 13 minutes.** You won't write any code here: every step is one command. Follow along with the
-instructor, or do it on your own at your own pace.
+**Self-paced, about 13 minutes, after the live L1** (`lab/L1-live.md`, the short primer). You won't write any code
+here: every step is one command. It goes deeper: the real service contract, the 12 contract tests, and
+Pydantic's error types.
 
 **What you'll learn:** a model's reply is untrusted input, and a Pydantic contract turns a silent misroute into a
 safe hand-over to a human.
