@@ -44,7 +44,7 @@ logging, Git and Docker.
 | **L4 Ship** | Self-paced | Git branch + PR; a Dockerfile the platform team would accept | `bash grade.sh l4` |
 | **Handover** | Self-paced | `HANDOVER.md`, half a page for the Sr. Platform Engineer | `bash grade.sh handover` |
 
-**Live lab:** start with **`lab/L1-live.md`** (L1, the short primer, ~8 min). Afterwards, at your own pace: **`lab/L1-deep-dive.md`**. Every step is one command; you write no code during the session.
+**Live lab:** **`lab/L1-live.md`** (L1 primer, ~8 min), then **`lab/L2-live.md`** (L2 primer: async, timeout, FastAPI, ~12–15 min). Afterwards, at your own pace: **`lab/L1-deep-dive.md`**. Every step is one command; you write no code during the session.
 
 **Short version:** primer first if you want the idea; `FULL-LAB.md` if you want the full hands-on path.
 
