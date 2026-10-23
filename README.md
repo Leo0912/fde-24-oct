@@ -8,6 +8,34 @@ Example Bank (fictional) has a complaint-triage prototype, `triage_prototype.py`
 The Head of Retail Ops wants it live; the Sr. Platform Engineer won't run a script; the CISO wants an
 audit trail with no account numbers in the logs. You'll turn it into a typed, logged, containerised service.
 
+## Choose your path
+
+### Path A · Primer first (recommended if L1 feels abstract)
+
+Start with `primer/l1-pydantic-mini/`. It is a short, concept-first warm-up that shows:
+
+- how messy LLM output can silently misroute work or crash a program
+- how a tiny Pydantic contract catches that before routing happens
+- why `human_review` is safer than guessing
+
+Run it with:
+
+```bash
+cd primer/l1-pydantic-mini
+bash run.sh all
+```
+
+Then come back to this main lab once the idea lands.
+
+### Path B · Full lab / deep dive
+
+Use this when you want the full Session 3 experience: typed models, service endpoint, timeout handling,
+logging, Git and Docker.
+
+- Start here: `FULL-LAB.md`
+- Guided L1 walkthrough: `lab/L1.md`
+- Write-it-yourself checks: `bash grade.sh l1`, then `l2`, `l3`, `l4`
+
 | Rung | When | You build | Check |
 |---|---|---|---|
 | **L1 Contract** | Live lab | Pydantic models; bad model output goes to a human | `bash grade.sh l1` |
@@ -16,9 +44,9 @@ audit trail with no account numbers in the logs. You'll turn it into a typed, lo
 | **L4 Ship** | Self-paced | Git branch + PR; a Dockerfile the platform team would accept | `bash grade.sh l4` |
 | **Handover** | Self-paced | `HANDOVER.md`, half a page for the Sr. Platform Engineer | `bash grade.sh handover` |
 
-**Live lab:** follow `lab/L1.md` (more rungs are coming). Every step is one command (`bash lab.sh …`); you write no code during the session.
+**Live lab:** if you want the deep dive, follow `lab/L1.md`. Every step is one command (`bash lab.sh …`); you write no code during the session.
 
-**Need a gentler warm-up before L1?** Try `primer/l1-pydantic-mini/` first. It is a small before/after demo that shows why Pydantic helps with messy LLM output, without FastAPI or the grader.
+**Short version:** primer first if you want the idea; `FULL-LAB.md` if you want the full hands-on path.
 
 No API key is needed: an offline stub model answers by default. Everything here is fictional (the bank,
 customers, accounts and teams). Never paste real customer data into this lab.
@@ -70,6 +98,7 @@ their products: use only the fictional data here. The grader always uses the off
 | `SELF-PACED.md` | Step-by-step guide for L3, L4 and the handover |
 | `GLOSSARY.md` | One-page glossary for L1/L2/L3/L4 and lab terms |
 | `primer/l1-pydantic-mini/` | Optional 8-minute primer: why Pydantic helps with LLM output |
+| `FULL-LAB.md` | How to use the existing lab as the deeper version after the primer |
 | `HANDOVER.md` | Your handover note (template) |
 
 ## Stuck?
