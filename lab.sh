@@ -70,5 +70,5 @@ case "${1:-}:${2:-}" in
   reset:l1) echo "HOW THIS STEP RUNS: copies lab/l1/models_start.py (the empty starter) -> app/models.py"
             cp lab/l1/models_start.py app/models.py
             echo "  ↩️  app/models.py is back to the TODO version (for the write-it-yourself assignment)." ;;
-  *) sed -n '2,7p' "$0"; exit 1 ;;
+  *) echo "Unknown command: bash lab.sh $*  (your copy may be out of date: run git pull)"; grep '^#  ' "$0"; exit 1 ;;
 esac
