@@ -18,6 +18,8 @@ audit trail with no account numbers in the logs. You'll turn it into a typed, lo
 
 **Live lab:** follow `lab/L1.md` (more rungs are coming). Every step is one command (`bash lab.sh …`); you write no code during the session.
 
+**Need a gentler warm-up before L1?** Try `primer/l1-pydantic-mini/` first. It is a small before/after demo that shows why Pydantic helps with messy LLM output, without FastAPI or the grader.
+
 No API key is needed: an offline stub model answers by default. Everything here is fictional (the bank,
 customers, accounts and teams). Never paste real customer data into this lab.
 
@@ -67,6 +69,7 @@ their products: use only the fictional data here. The grader always uses the off
 | `Dockerfile` | L4b: works, but the platform team would refuse it. Fix it |
 | `SELF-PACED.md` | Step-by-step guide for L3, L4 and the handover |
 | `GLOSSARY.md` | One-page glossary for L1/L2/L3/L4 and lab terms |
+| `primer/l1-pydantic-mini/` | Optional 8-minute primer: why Pydantic helps with LLM output |
 | `HANDOVER.md` | Your handover note (template) |
 
 ## Stuck?
