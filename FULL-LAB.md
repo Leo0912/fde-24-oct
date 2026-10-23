@@ -23,13 +23,13 @@ This full lab keeps that idea, then adds the production engineering pieces aroun
 
 ### 1. Optional warm-up
 
-If you want the shortest possible intro first:
+Pick the primer that matches the topic you want to understand first:
 
-```bash
-cd primer/l1-pydantic-mini
-bash run.sh all
-cd ../..
-```
+- L1 contract: `primer/l1-pydantic-mini/`
+- L2 service: `primer/l2-async-fastapi-mini/`
+- L3 observability: `primer/l3-observability-mini/`
+
+Start with the primer if you want the concept first; then come back to the full lab.
 
 ### 2. Guided L1 walkthrough
 

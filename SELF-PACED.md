@@ -5,6 +5,8 @@ Work in your codespace. In Colab you can do L3; do L4 in a codespace.
 
 ## L3 Observability (20 min)
 
+**Need the short concept-first version first?** Run `cd primer/l3-observability-mini && bash run.sh all`, then come back here.
+
 **Why:** the CISO's rule is that every decision has an audit trail, and no account numbers reach the logs.
 A `print()` line can't be searched, joined or trusted. One JSON line per request can.
 

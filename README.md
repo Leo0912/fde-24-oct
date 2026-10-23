@@ -10,22 +10,15 @@ audit trail with no account numbers in the logs. You'll turn it into a typed, lo
 
 ## Choose your path
 
-### Path A · Primer first (recommended if L1 feels abstract)
+### Path A · Primers first (recommended if a topic feels abstract)
 
-Start with `primer/l1-pydantic-mini/`. It is a short, concept-first warm-up that shows:
+Start with `primer/README.md`, or jump straight to the topic you need:
 
-- how messy LLM output can silently misroute work or crash a program
-- how a tiny Pydantic contract catches that before routing happens
-- why `human_review` is safer than guessing
+- `primer/l1-pydantic-mini/` — contract and why Pydantic helps
+- `primer/l2-async-fastapi-mini/` — async, timeout and FastAPI
+- `primer/l3-observability-mini/` — request IDs, masking and JSON audit logs
 
-Run it with:
-
-```bash
-cd primer/l1-pydantic-mini
-bash run.sh all
-```
-
-Then come back to this main lab once the idea lands.
+These are short, concept-first warm-ups. Then come back to this main lab once the idea lands.
 
 ### Path B · Full lab / deep dive
 
@@ -97,7 +90,10 @@ their products: use only the fictional data here. The grader always uses the off
 | `Dockerfile` | L4b: works, but the platform team would refuse it. Fix it |
 | `SELF-PACED.md` | Step-by-step guide for L3, L4 and the handover |
 | `GLOSSARY.md` | One-page glossary for L1/L2/L3/L4 and lab terms |
-| `primer/l1-pydantic-mini/` | Optional 8-minute primer: why Pydantic helps with LLM output |
+| `primer/README.md` | Index of the short concept-first primers for L1, L2 and L3 |
+| `primer/l1-pydantic-mini/` | Optional L1 primer: why Pydantic helps with LLM output |
+| `primer/l2-async-fastapi-mini/` | Optional L2 primer: async, timeout and FastAPI |
+| `primer/l3-observability-mini/` | Optional L3 primer: request IDs, masking and JSON audit logs |
 | `FULL-LAB.md` | How to use the existing lab as the deeper version after the primer |
 | `HANDOVER.md` | Your handover note (template) |
 
