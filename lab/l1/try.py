@@ -3,6 +3,8 @@ import pathlib
 import sys
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from _view import chain, code  # noqa: E402
 try:
     from pydantic import ValidationError
 
@@ -12,6 +14,12 @@ except Exception:
     print("Your app/models.py still has the TODO version. Run:  bash lab.sh l1 apply")
     sys.exit(1)
 
+chain("""  bash lab.sh l1 try
+    └─ python lab/l1/try.py
+         └─ for each reply A, B, C: TriageResult.model_validate_json(reply)   (the class in app/models.py)
+              ├─ valid   -> a typed TriageResult object
+              └─ invalid -> pydantic.ValidationError; we print each error's field and type""")
+code("app/models.py", "class TriageResult", "needs_human: bool", "The contract each reply is checked against")
 CASES = [
     ("A  priority 7", '{"category": "fraud", "priority": 7, "team": "fraud_ops", "summary": "UPI debit"}'),
     ("B  an extra field", '{"category": "fraud", "priority": 1, "team": "fraud_ops", "summary": "UPI debit", "confidence": 0.9}'),
