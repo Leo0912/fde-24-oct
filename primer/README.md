@@ -11,6 +11,7 @@ The primers are designed to match the Session 3 sequence:
 1. **L1 Contract** → validate model output before trusting it
 2. **L2 Service** → call the model safely in an async API
 3. **L3 Observability** → log one safe, searchable audit line per request
+4. **L4 Ship** → stage only what you mean and build an image the platform team will accept
 
 If a learner is short on time, they can still jump straight to one topic.
 
@@ -51,8 +52,17 @@ cd primer/l3-observability-mini
 bash run.sh all
 ```
 
+### L4 · Git and Docker for shipping
+
+Why deliberate staging matters, and why “the image builds” is not enough.
+
+```bash
+cd primer/l4-ship-mini
+bash run.sh all
+```
+
 ## Best learner flow
 
-- Best sequence: **L1 primer → L2 primer → L3 primer → full lab**.
+- Best sequence: **L1 primer → L2 primer → L3 primer → L4 primer → full lab**.
 - If one topic already feels clear, skip straight to the next one.
 - The primers teach the **why**; the full lab teaches the **how in a real service**.

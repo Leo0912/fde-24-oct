@@ -2,7 +2,8 @@
 # Session 3 lab runner. Every step is one command; nothing to type into the code.
 #   bash lab.sh l1 fail | check | show | apply | pass | try          (L1 Contract)
 #   bash lab.sh l2 fail | check | show | apply | pass | try | serve  (L2 Service)
-#   bash lab.sh reset l1 | l2                                    (put the TODO version back, e.g. for the assignment)
+#   bash lab.sh l3 fail | check | show | apply | pass | try | serve  (L3 Observability)
+#   bash lab.sh reset l1 | l2 | l3                                   (put the TODO version back, e.g. for the assignment)
 set -euo pipefail
 cd "$(dirname "$0")"
 PY=${PY:-python}
@@ -41,11 +42,33 @@ case "${1:-}:${2:-}" in
             echo "  Then: Ports tab -> 8000 -> globe icon -> add /docs to the address. Keep the port Private."
             echo
             "$PY" -m uvicorn app.main:app --port 8000 ;;
+  l3:fail)  RUNG="L3 Observability"; hdr "step 1 · SEE IT FAIL" "Objective: a print line leaks account numbers; the service leaves no audit trail. In the deck: Ship topic, 'What is structured logging?'."
+            "$PY" lab/l3/fail.py ;;
+  l3:check) RUNG="L3 Observability"; hdr "steps 2 and 5 · RUN THE CHECKS" "Objective: see what the logging tests check, and why they fail or pass. In the deck: Ship topic, 'One JSON line per request'."
+            "$PY" lab/l3/check.py ;;
+  l3:show)  RUNG="L3 Observability"; hdr "step 3 · READ THE FIX" "Objective: mask, the JSON formatter, the middleware and the audit fields. In the deck: Ship topic, 'One JSON line per request'."
+            "$PY" lab/l3/show.py ;;
+  l3:apply) RUNG="L3 Observability"; hdr "step 4 · APPLY THE FIX" "Objective: put logging in place in both files, and see exactly what changed."
+            "$PY" lab/l3/apply.py ;;
+  l3:pass)  RUNG="L3 Observability"; hdr "step 5 · SEE IT PASS" "Objective: one request, one JSON line, the ID echoed, the account masked. In the deck: Ship topic, 'One JSON line per request'."
+            "$PY" lab/l3/pass.py ;;
+  l3:try)   RUNG="L3 Observability"; hdr "step 6 · TRY IT" "Objective: search, count and audit your log lines. In the deck: Ship topic, 'What is structured logging?' and 'Logs, metrics, traces'."
+            "$PY" lab/l3/try_.py ;;
+  l3:serve) RUNG="L3 Observability"; hdr "step 7 · WATCH THE LOG LINES LIVE" "Objective: see one JSON line appear per request while you use /docs."
+            echo "HOW THIS STEP RUNS"
+            echo "  bash lab.sh l3 serve"
+            echo "    └─ python -m uvicorn app.main:app --port 8000   (app/main.py calls setup_logging(): JSON lines go to this terminal)"
+            echo "  Then: Ports tab -> 8000 -> globe -> /docs -> POST /triage -> Try it out. Watch this terminal. Ctrl+C to stop."
+            echo
+            "$PY" -m uvicorn app.main:app --port 8000 ;;
+  reset:l3) echo "HOW THIS STEP RUNS: copies lab/l3/logging_start.py -> app/logging_setup.py and lab/l3/main_start.py (L2 done, L3 TODOs) -> app/main.py"
+            cp lab/l3/logging_start.py app/logging_setup.py; cp lab/l3/main_start.py app/main.py
+            echo "  ↩️  app/logging_setup.py and app/main.py are back to the L3 TODO version (for the write-it-yourself assignment)." ;;
   reset:l2) echo "HOW THIS STEP RUNS: copies lab/l2/main_start.py (the L2 starter) -> app/main.py"
             cp lab/l2/main_start.py app/main.py
             echo "  ↩️  app/main.py is back to the TODO version (for the write-it-yourself assignment)." ;;
   reset:l1) echo "HOW THIS STEP RUNS: copies lab/l1/models_start.py (the empty starter) -> app/models.py"
             cp lab/l1/models_start.py app/models.py
             echo "  ↩️  app/models.py is back to the TODO version (for the write-it-yourself assignment)." ;;
-  *) sed -n '2,6p' "$0"; exit 1 ;;
+  *) sed -n '2,7p' "$0"; exit 1 ;;
 esac

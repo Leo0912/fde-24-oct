@@ -34,6 +34,8 @@ Check: `bash grade.sh l3`. Then run the service and watch the terminal while you
 
 ## L4a Git (15 min)
 
+**Need the short concept-first version first?** In Codespaces, run `cd primer/l4-ship-mini && bash run.sh all`, then come back here.
+
 **Why:** at a customer you work in *their* repo, under *their* review rules. Small branches and clear PRs
 are how you earn merge rights.
 

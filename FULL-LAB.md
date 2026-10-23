@@ -28,6 +28,7 @@ If you want the concept-first path before the full implementation, run the prime
 - `primer/l1-pydantic-mini/` → contract
 - `primer/l2-async-fastapi-mini/` → service
 - `primer/l3-observability-mini/` → observability
+- `primer/l4-ship-mini/` → shipping
 
 Then come back to the full lab.
 

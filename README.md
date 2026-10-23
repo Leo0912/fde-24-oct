@@ -17,10 +17,11 @@ Start with `primer/README.md`, or follow the same sequence as the full lab:
 1. `primer/l1-pydantic-mini/` — **L1 Contract**: why messy LLM output needs a contract
 2. `primer/l2-async-fastapi-mini/` — **L2 Service**: async calls, timeouts and FastAPI
 3. `primer/l3-observability-mini/` — **L3 Observability**: request IDs, masking and JSON audit logs
+4. `primer/l4-ship-mini/` — **L4 Ship**: deliberate staging and Docker images a platform team accepts
 
 These are short, concept-first warm-ups. The simplest learner flow is:
 
-**L1 primer → L2 primer → L3 primer → full lab**
+**L1 primer → L2 primer → L3 primer → L4 primer → full lab**
 
 Then come back to this main lab once the idea lands.
 
@@ -41,7 +42,7 @@ logging, Git and Docker.
 | **L4 Ship** | Self-paced | Git branch + PR; a Dockerfile the platform team would accept | `bash grade.sh l4` |
 | **Handover** | Self-paced | `HANDOVER.md`, half a page for the Sr. Platform Engineer | `bash grade.sh handover` |
 
-**Live lab:** **`lab/L1-live.md`** (L1 primer, ~8 min), then **`lab/L2-live.md`** (L2 primer: async, timeout, FastAPI, ~12–15 min). Afterwards, at your own pace: **`lab/L1-deep-dive.md`**, then **`lab/L2-deep-dive.md`**. Every step is one command; you write no code during the session.
+**Live lab:** **`lab/L1-live.md`** (L1 primer, ~8 min), then **`lab/L2-live.md`** (L2 primer: async, timeout, FastAPI, ~12–15 min). Afterwards, at your own pace: **`lab/L1-deep-dive.md`**, then **`lab/L2-deep-dive.md`**, then **`lab/L3-deep-dive.md`**. Every step is one command; you write no code during the session.
 
 **Short version:** run the primers in order for the concept path; use `FULL-LAB.md` for the deeper hands-on path.
 
@@ -98,6 +99,7 @@ their products: use only the fictional data here. The grader always uses the off
 | `primer/l1-pydantic-mini/` | Optional L1 primer: why Pydantic helps with LLM output |
 | `primer/l2-async-fastapi-mini/` | Optional L2 primer: async, timeout and FastAPI |
 | `primer/l3-observability-mini/` | Optional L3 primer: request IDs, masking and JSON audit logs |
+| `primer/l4-ship-mini/` | Optional L4 primer: deliberate staging and Docker images the platform team accepts |
 | `FULL-LAB.md` | How to use the existing lab as the deeper version after the primer |
 | `HANDOVER.md` | Your handover note (template) |
 
