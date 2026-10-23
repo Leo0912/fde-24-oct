@@ -2,6 +2,7 @@
 # Run once before the session to confirm your lab environment is ready.
 cd "$(dirname "$0")"
 echo "Checking your lab environment..."
+echo "  HOW THIS RUNS: checks the Python version, imports the lab packages, then runs git --version and docker info"
 ok=1
 pass() { echo "  ✅ $1"; }
 fail() { echo "  ❌ $1"; ok=0; }

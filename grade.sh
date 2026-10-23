@@ -27,8 +27,24 @@ hints() {  # one plain-language hint per failing test
   done
 }
 
+explain() {  # explain <label>: the call chain for each part (rule: no black-box steps)
+  case "$1" in
+    L1) printf '  HOW THIS RUNS: python -m pytest -q tests/test_l1.py\n    tests import Complaint, TriageResult, parse_triage from app/models.py (the file being checked)\n    and the stub model'"'"'s bad replies from app/llm.py. Plain-language list of all 12 checks: bash lab.sh l1 check\n' ;;
+    L2) printf '  HOW THIS RUNS: python -m pytest -q tests/test_l2.py\n    tests call /healthz and /triage on app/main.py through FastAPI'"'"'s TestClient (no server needed)\n' ;;
+    L3) printf '  HOW THIS RUNS: python -m pytest -q tests/test_l3.py\n    tests check mask() and JsonFormatter in app/logging_setup.py and the request middleware in app/main.py\n' ;;
+  esac
+}
+
+open_todos() {  # open_todos <label>: TODO lines still open in the file this part checks
+  local f
+  case "$1" in L1) f=app/models.py ;; L2) f=app/main.py ;; L3) f="app/logging_setup.py app/main.py" ;; *) return ;; esac
+  local hits; hits=$(grep -H -n -E "TODO \($1|NotImplementedError\(\"$1" $f 2>/dev/null | head -8)
+  [ -n "$hits" ] && { echo "       Still TODO (file:line):"; echo "$hits" | sed 's/^/         /'; }
+}
+
 tests() {  # tests <label> <file>
   echo "== $1"
+  explain "$1"
   local log="/tmp/grade_$1.log"
   if "$PY" -m pytest -q "$2" >"$log" 2>&1; then
     ok "$1 tests pass"
@@ -36,12 +52,14 @@ tests() {  # tests <label> <file>
     bad "$1 tests fail. First problems:"
     grep -E "^(FAILED|ERROR)|NotImplementedError|AssertionError|assert " "$log" | head -4 | sed 's/^/       /'
     hints "$log" | awk '!seen[$0]++'
+    open_todos "$1"
     echo "       Full output: $log"
   fi
 }
 
 l4_git() {
   echo "== L4a Git"
+  echo "  HOW THIS RUNS: git rev-parse (your branch), git check-ignore and git ls-files (.env), git rev-list (commits ahead of main)"
   local branch; branch=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "?")
   if [ "$branch" != "main" ] && [ "$branch" != "master" ] && [ "$branch" != "?" ]; then ok "on a feature branch ($branch)"
   else bad "you're on '$branch': create a branch, e.g. git switch -c feat/triage-service"; fi
@@ -56,6 +74,7 @@ l4_git() {
 
 l4_docker() {
   echo "== L4b Docker"
+  echo "  HOW THIS RUNS: reads Dockerfile and .dockerignore, then docker build, docker history (secrets), docker run (user, .env, health)"
   if ! command -v docker >/dev/null 2>&1; then
     info "Docker isn't available here (Colab?). Skipping L4b: do it in your codespace."; return
   fi
@@ -92,6 +111,7 @@ l4_docker() {
 
 handover() {
   echo "== Handover note"
+  echo "  HOW THIS RUNS: reads HANDOVER.md; each of the four ## sections needs at least one line of your own (TODO lines don't count)"
   local h missing=0
   for h in "What it does" "How to run it" "What is logged" "Known limits"; do
     if awk -v h="## $h" '$0==h{f=1;next} /^## /{f=0} f && NF && $0 !~ /TODO/{c++} END{exit !(c>0)}' HANDOVER.md 2>/dev/null; then :
