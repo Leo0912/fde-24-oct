@@ -16,6 +16,8 @@ audit trail with no account numbers in the logs. You'll turn it into a typed, lo
 | **L4 Ship** | Self-paced | Git branch + PR; a Dockerfile the platform team would accept | `bash grade.sh l4` |
 | **Handover** | Self-paced | `HANDOVER.md`, half a page for the Sr. Platform Engineer | `bash grade.sh handover` |
 
+**Live lab:** follow `lab/L1.md` (more rungs are coming). Every step is one command (`bash lab.sh …`); you write no code during the session.
+
 No API key is needed: an offline stub model answers by default. Everything here is fictional (the bank,
 customers, accounts and teams). Never paste real customer data into this lab.
 
