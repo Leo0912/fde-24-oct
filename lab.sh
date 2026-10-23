@@ -8,16 +8,16 @@ PY=${PY:-python}
 hdr() { printf '\n\033[1m━━━ L1 Contract · %s ━━━\033[0m\n%s\n\n' "$1" "$2"; }
 
 case "${1:-}:${2:-}" in
-  l1:fail)  hdr "step 1 · SEE IT FAIL" "Objective: model output is untrusted input. Deck: slide 12."
+  l1:fail)  hdr "step 1 · SEE IT FAIL" "Objective: model output is untrusted input. In the deck: Contract topic, 'The model's reply is untrusted input'."
             "$PY" lab/l1/fail.py ;;
-  l1:show)  hdr "step 3 · READ THE FIX" "Objective: see exactly what Pydantic adds. Deck: slides 13-14."
+  l1:show)  hdr "step 3 · READ THE FIX" "Objective: see exactly what Pydantic adds. In the deck: Contract topic, 'What is Pydantic?' and 'The contract in code'."
             cat lab/l1/explain.txt ;;
   l1:apply) hdr "step 4 · APPLY THE FIX" "Copies the finished contract into app/models.py (your TODO version is kept in lab/l1/models_start.py)."
             cp lab/l1/models_done.py app/models.py
             echo "  ✅ app/models.py now has the contract. Next: bash grade.sh l1" ;;
-  l1:pass)  hdr "step 5 · SEE IT PASS" "Objective: the same bad replies, now caught. Deck: slide 14 (bottom line)."
+  l1:pass)  hdr "step 5 · SEE IT PASS" "Objective: the same bad replies, now caught. In the deck: Contract topic, 'The contract in code'."
             "$PY" lab/l1/pass.py ;;
-  l1:try)   hdr "step 6 · TRY IT" "Objective: read Pydantic's error types. Predict first. Deck: slide 16."
+  l1:try)   hdr "step 6 · TRY IT" "Objective: read Pydantic's error types. Predict first. In the deck: Contract topic, 'Predict the validation error'."
             "$PY" lab/l1/try.py ;;
   reset:l1) cp lab/l1/models_start.py app/models.py
             echo "  ↩️  app/models.py is back to the TODO version (for the write-it-yourself assignment)." ;;

@@ -1,4 +1,4 @@
-"""L1 · step 6: try it. Three ready-made replies; predict the result before you read it (deck slide 16)."""
+"""L1 · step 6: try it. Three ready-made replies; predict the result before you read it (Contract topic in the deck: "Predict the validation error")."""
 import pathlib
 import sys
 

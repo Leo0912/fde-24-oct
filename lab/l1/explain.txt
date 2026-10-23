@@ -1,4 +1,4 @@
-The fix you're about to apply: app/models.py (the same code as deck slide 14)
+The fix you're about to apply: app/models.py (the same code as "The contract in code" in the Contract topic of the deck)
 
 class Complaint(BaseModel):                         # what the case system sends us
     id: str = Field(min_length=1, max_length=20)
