@@ -8,6 +8,48 @@ Example Bank (fictional) has a complaint-triage prototype, `triage_prototype.py`
 The Head of Retail Ops wants it live; the Sr. Platform Engineer won't run a script; the CISO wants an
 audit trail with no account numbers in the logs. You'll turn it into a typed, logged, containerised service.
 
+## Start here: get your lab ready (5 minutes, before the session)
+
+### Option A (recommended): GitHub Codespaces
+
+Everything works here, including Git and Docker. Nothing to install on your laptop.
+
+1. Sign in to GitHub (a free account is fine): https://github.com
+2. On **this repository's** page, click the green **Use this template** button → **Create a new repository**.
+   Give it any name and create it. This is **your own copy**: you can push branches and open pull requests in it.
+   (Don't open a codespace on this page itself: you couldn't push your work.)
+3. **In your copy**, click **Code** → **Codespaces** → **Create codespace on main**. The first start takes 2 to 3
+   minutes.
+4. In the terminal at the bottom, run:
+
+   ```bash
+   bash check_setup.sh
+   ```
+
+   You should see **All good. You are ready for the session.**
+5. Then stop the codespace to save your free hours: github.com/codespaces → **⋯** → **Stop**. On the day, open it
+   again from the same page.
+
+Free allowance: GitHub Free includes 120 core-hours a month. A 2-core codespace uses 2 per hour, so you get about
+60 hours. Delete the codespace when you've finished the self-paced work.
+
+### Option B (if GitHub or Codespaces is blocked, common on company laptops): Google Colab
+
+1. Open the notebook in Colab with a Google account:
+   https://colab.research.google.com/github/sendtoshailesh/fde-s03-lab/blob/main/colab/s03_lab.ipynb
+   (or download `colab/s03_lab.ipynb` from this repo and use File → Upload notebook in Colab).
+2. **Runtime** → **Run all**. The first cells should run without errors.
+
+Colab runs the same lab: the four live primers, then the four deep dives. You write no code. Two parts (Docker,
+and opening `/docs` in a browser) need Codespaces, which you can do later from a personal device. Colab's
+storage is temporary: File → Save a copy in Drive.
+
+### Good to know
+
+- No API key is needed: the lab has an offline model.
+- Everything in the lab is fictional. Never paste real customer or company data into it.
+- If `check_setup.sh` shows a ❌, post a screenshot in the session chat and we'll help you fix it.
+
 ## Choose your path
 
 ### Path A · Primers first (recommended if a topic feels abstract)
@@ -52,36 +94,6 @@ logging, Git and Docker.
 - **Check your work:** `bash grade.sh l1|l2|l3|l4|handover|all`
 - **Replay the guided deep-dive flow:** `bash lab.sh l1|l2|l3|l4 fail|check|show|apply|pass|try`
 - **Primer mini-labs do not need reset:** just rerun `cd primer/<mini-lab> && bash run.sh all`
-
-No API key is needed: an offline stub model answers by default. Everything here is fictional (the bank,
-customers, accounts and teams). Never paste real customer data into this lab.
-
-## Option A (recommended): GitHub Codespaces
-
-Everything works here, including Git and Docker. Nothing to install on your laptop.
-
-1. Sign in to GitHub (a free account is fine).
-2. Create **your own copy** of this repository (**Use this template** → **Create a new repository**), so you can push branches and open PRs.
-3. In your copy: **Code** → **Codespaces** → **Create codespace on main**. The first start can take a few minutes.
-4. In the terminal: `bash check_setup.sh`. You should see **All good. You are ready for the session.**
-
-During the lab, run the service with `uvicorn app.main:app --reload --port 8000`, open the **Ports** tab, and
-click the globe icon on port 8000. Add `/docs` to the URL. Keep the port **Private** (the default).
-
-Free allowance: GitHub Free includes 120 core-hours a month. A 2-core codespace uses 2 per hour, so you get
-about 60 hours. **Stop** your codespace after each session (github.com/codespaces → ⋯ → Stop) and delete it
-when you've finished the self-paced work.
-
-## Option B (fallback): Google Colab
-
-Use this if GitHub or Codespaces is blocked on your laptop (common on company laptops), or your codespace
-won't start. Colab runs **the same lab**: the four live primers, then the four deep dives (`bash lab.sh …`). You
-write no code. Colab can't run Docker or open `/docs`, so those steps say so and skip; do them later in a codespace.
-
-1. Open `colab/s03_lab.ipynb` from this repo in Colab (File → Upload notebook, or File → Open notebook → GitHub).
-2. Run the two **Setup** cells (they install the packages and unpack the lab), then each cell in order.
-
-Colab's runtime storage is temporary: File → Save a copy in Drive.
 
 ## Optional: a real model
 
