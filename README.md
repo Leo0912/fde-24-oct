@@ -46,6 +46,13 @@ logging, Git and Docker.
 
 **Short version:** run the primers in order for the concept path; use `FULL-LAB.md` for the deeper hands-on path.
 
+## Quick cheat sheet
+
+- **Reset a full-lab rung:** `bash lab.sh reset l1|l2|l3|l4`
+- **Check your work:** `bash grade.sh l1|l2|l3|l4|handover|all`
+- **Replay the guided deep-dive flow:** `bash lab.sh l1|l2|l3|l4 fail|check|show|apply|pass|try`
+- **Primer mini-labs do not need reset:** just rerun `cd primer/<mini-lab> && bash run.sh all`
+
 No API key is needed: an offline stub model answers by default. Everything here is fictional (the bank,
 customers, accounts and teams). Never paste real customer data into this lab.
 
