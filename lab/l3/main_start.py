@@ -1,4 +1,4 @@
-"""L2 Service (live lab) and L3 request logging (self-paced).
+"""L2 Service and L3 request logging.
 
 L2 tasks (about 12 minutes). Run `bash grade.sh l2` to check.
 1. `GET /healthz` returns {"status": "ok"}.
@@ -6,7 +6,7 @@ L2 tasks (about 12 minutes). Run `bash grade.sh l2` to check.
    and returns parse_triage(raw). On timeout, return human_review("model timed out").
 Then run it:  uvicorn app.main:app --reload --port 8000   and open the forwarded port's /docs page.
 
-L3 tasks: see SELF-PACED.md.
+L3 tasks: see ASSIGNMENT.md.
 """
 
 from __future__ import annotations
@@ -28,7 +28,7 @@ llm = get_llm()
 app = FastAPI(title="Example Bank complaint triage", version="0.1.0")
 
 
-# TODO (L3.3): request-logging middleware. See SELF-PACED.md.
+# TODO (L3.3): request-logging middleware. See ASSIGNMENT.md.
 
 
 @app.get("/healthz")
@@ -44,5 +44,5 @@ async def triage(complaint: Complaint, request: Request) -> TriageResult:
         result = parse_triage(raw)
     except TimeoutError:
         result = human_review("model timed out")
-    # TODO (L3.4): set request.state.log = {...} before returning. See SELF-PACED.md.
+    # TODO (L3.4): set request.state.log = {...} before returning. See ASSIGNMENT.md.
     return result

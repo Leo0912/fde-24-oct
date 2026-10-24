@@ -1,6 +1,6 @@
-# L3 deep dive (self-paced) · Observability: one JSON line per request, masked
+# L3 deep dive (after the session) · Observability: one JSON line per request, masked
 
-**Self-paced, about 15 minutes, after the L3 primer** (`primer/l3-observability-mini/`). You write no code: every
+**After the session, at your own pace, about 15 minutes, after the L3 primer** (`primer/l3-observability-mini/`). You write no code: every
 step is one command, and every step prints how it runs and the exact code lines involved. It works on the real
 service: **`app/logging_setup.py`** and **`app/main.py`**.
 

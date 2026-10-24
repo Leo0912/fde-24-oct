@@ -54,7 +54,7 @@ with tempfile.TemporaryDirectory(prefix="l4-git-mini-") as tmp:
     print("WHAT WENT WRONG")
     print("- `.env` is now staged, even though it is a local secret file.")
     print("- `notes.txt` is staged too, even though it is unrelated scratch work.")
-    print("- This is why the full lab says: never `git add -A` with untracked files around.\n")
+    print("- This is why the lab says: never `git add -A` with untracked files around.\n")
 
     run(repo, "restore", "--staged", ".")
     (repo / ".gitignore").write_text("__pycache__/\n.env\n")

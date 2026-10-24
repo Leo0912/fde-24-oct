@@ -1,11 +1,47 @@
-# Self-paced: L3, L4 and the handover (about 60 minutes)
+# Assignment: write it yourself (L1–L4 and the handover)
 
-Finish L1 and L2 first (`bash grade.sh l1` and `bash grade.sh l2` both green).
-Work in your codespace. In Colab you can do L3; do L4 in a codespace.
+In the session you **watched** each rung work (the live lab), and the deep dives showed the finished code line by
+line. Now you write it. Each rung starts from its TODO version and is checked by `grade.sh`.
 
-## L3 Observability (20 min)
+**Start each rung from its TODOs:** `bash lab.sh reset l1` (or `l2`, `l3`, `l4`). This puts the starter files back
+if you applied the fix during a deep dive. Do the rungs in order: each one builds on the one before.
 
-**Need the short concept-first version first?** Run `cd primer/l3-observability-mini && bash run.sh all`, then come back here.
+**Check as you go:** `bash grade.sh l1` … `l4`, `bash grade.sh handover`, and finally `bash grade.sh all`. A ❌ line
+tells you which TODO is still open, with its file and line.
+
+Work in your codespace. Colab can do L1–L3; L4 needs a codespace.
+
+## L1 Contract (about 15 min)
+
+**Want to see it working first?** The L1 deep dive (`lab/L1-deep-dive.md`) runs the finished version step by step.
+
+`bash lab.sh reset l1`, then fill in the TODOs in **`app/models.py`**:
+
+1. **L1.1 `Complaint`**: `id` and `text` as `str` with `Field(min_length=1, max_length=...)` limits, and `channel` as a
+   `Literal` of `"email"`, `"chat"`, `"branch"`, `"phone"` (default `"email"`).
+2. **L1.2 `TriageResult`**: `model_config = ConfigDict(extra="forbid")`, then `category: Category`, `priority: int`
+   between 1 and 4 (`Field(ge=1, le=4)`), `team: Team`, `summary: str` (max 200), `needs_human: bool = False`.
+3. **L1.3 `parse_triage()`**: `return TriageResult.model_validate_json(raw)` inside `try`; on `ValidationError`,
+   return `human_review(...)` with the reason. Never crash, never guess.
+
+Check: `bash grade.sh l1`.
+
+## L2 Service (about 15 min)
+
+**Want to see it working first?** The L2 deep dive (`lab/L2-deep-dive.md`) runs the finished version step by step.
+
+`bash lab.sh reset l2`, then fill in the TODOs in **`app/main.py`**:
+
+1. **L2.1 `/healthz`**: return `{"status": "ok"}`.
+2. **L2.2 `/triage`**: follow the pattern in the TODO comment: `async with asyncio.timeout(TIMEOUT_S):` around
+   `raw = await llm.complete(...)`, then `parse_triage(raw)`; catch `TimeoutError` **outside** the `async with` and
+   return `human_review("model timed out")`. Remove the `raise`.
+
+Check: `bash grade.sh l2`. Then run it: `bash lab.sh l2 serve` and try `/docs` (Ports → 8000 → globe).
+
+## L3 Observability (about 20 min)
+
+**Want to see it working first?** The L3 deep dive (`lab/L3-deep-dive.md`) runs the finished version step by step.
 
 **Why:** the CISO's rule is that every decision has an audit trail, and no account numbers reach the logs.
 A `print()` line can't be searched, joined or trusted. One JSON line per request can.
@@ -34,7 +70,7 @@ Check: `bash grade.sh l3`. Then run the service and watch the terminal while you
 
 ## L4a Git (15 min)
 
-**Need the short concept-first version first?** In Codespaces, run `cd primer/l4-ship-mini && bash run.sh all`, then come back here.
+**Want to see it working first?** The L4 deep dive (`lab/L4-deep-dive.md`) runs the finished version step by step. Do L4 in a codespace (Colab has no Docker).
 
 **Why:** at a customer you work in *their* repo, under *their* review rules. Small branches and clear PRs
 are how you earn merge rights.

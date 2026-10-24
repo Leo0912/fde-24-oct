@@ -1,6 +1,6 @@
-# L1 deep dive (self-paced) · Contract: never trust the model's reply
+# L1 deep dive (after the session) · Contract: never trust the model's reply
 
-**Self-paced, about 13 minutes, after the live L1** (`lab/L1-live.md`, the short primer). You won't write any code
+**After the session, at your own pace, about 13 minutes, after the live L1** (`lab/L1-live.md`, the short primer). You won't write any code
 here: every step is one command. It goes deeper: the real service contract, the 12 contract tests, and
 Pydantic's error types.
 

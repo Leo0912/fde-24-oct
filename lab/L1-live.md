@@ -1,7 +1,7 @@
 # L1 · live · Why Pydantic helps with LLM output (about 8 minutes)
 
 **The short version, for everyone.** You run three commands and read their output. You write no code. When
-you're done, the deeper self-paced version is `lab/L1-deep-dive.md`.
+you're done, the deeper version, for after the session, is `lab/L1-deep-dive.md`.
 
 **What you'll learn:** a model's reply is untrusted input. Code that trusts it can send a fraud complaint to the
 wrong queue without any error. A small Pydantic contract catches the same bad replies and sends them to a person.
@@ -97,5 +97,5 @@ Post **✅ L1** in the chat.
 **The limit to remember:** a contract catches *malformed* replies. A valid reply with the wrong team still
 passes. Checking that is evaluation, later in the programme.
 
-**Want more? (self-paced):** `lab/L1-deep-dive.md` runs the same idea on the real service contract
+**Want more? (after the session):** `lab/L1-deep-dive.md` runs the same idea on the real service contract
 (`app/models.py`), shows the 12 contract tests, and lets you try Pydantic's error types.

@@ -64,4 +64,4 @@ WHAT TO NOTICE
   request_id req-docker-001 and EB-******6354, masked (L3). Same service, now in a box the platform team runs.""")
 print("""
   Done. The assignment does all of L4 for real in your repo: bash lab.sh reset l4, then follow L4a and L4b in
-  SELF-PACED.md, and check with bash grade.sh l4.""")
+  ASSIGNMENT.md, and check with bash grade.sh l4.""")

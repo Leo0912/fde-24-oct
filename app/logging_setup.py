@@ -1,6 +1,6 @@
 """L3 Observability: one JSON log line per request, with account numbers masked.
 
-Self-paced tasks: see SELF-PACED.md. Run `bash grade.sh l3` to check.
+Assignment: see ASSIGNMENT.md. Run `bash grade.sh l3` to check.
 """
 
 from __future__ import annotations

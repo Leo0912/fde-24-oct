@@ -1,4 +1,4 @@
-# Session 3 primer: shipping with Git and Docker (self-paced L4)
+# Session 3 primer: shipping with Git and Docker (live L4)
 
 A **separate, simplified primer** for Session 3, like the L1, L2 and L3 primers.
 Learners run commands and read output; they write no code.

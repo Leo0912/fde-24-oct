@@ -1,5 +1,5 @@
 # L4b: this Dockerfile works, and the platform team would still refuse it.
-# Fix it (see SELF-PACED.md), then run: bash grade.sh l4
+# Fix it (see ASSIGNMENT.md), then run: bash grade.sh l4
 #
 # TODO 1: base image from Docker Hub (anonymous pulls are rate-limited), full size, not pinned to a patch version.
 #         Use the pinned slim mirror on ECR Public: public.ecr.aws/docker/library/python:3.12.15-slim-bookworm

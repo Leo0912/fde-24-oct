@@ -68,7 +68,7 @@
 - **`.dockerignore`** — tells Docker which files not to send into the build context.
 - **`.gitignore`** — tells Git which files should stay untracked.
 - **`grade.sh`** — the local checker script for each lab rung.
-- **Codespaces** — GitHub’s cloud development environment. Recommended for the full lab.
+- **Codespaces** — GitHub’s cloud development environment. Recommended for the whole lab (Colab has no Docker).
 - **Colab** — Google Colab notebook environment. Good fallback for L1–L3, but not for Git or Docker.
 
 ## Quick memory aid

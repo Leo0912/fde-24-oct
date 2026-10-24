@@ -1,6 +1,6 @@
-# L2 deep dive (self-paced) · Service: the real FastAPI endpoint, async and with a timeout
+# L2 deep dive (after the session) · Service: the real FastAPI endpoint, async and with a timeout
 
-**Self-paced, about 15 minutes, after the live L2** (`lab/L2-live.md`, the short primer). You write no code:
+**After the session, at your own pace, about 15 minutes, after the live L2** (`lab/L2-live.md`, the short primer). You write no code:
 every step is one command, and every step prints how it runs and the exact code lines involved. It works on
 the real service in **`app/main.py`**.
 

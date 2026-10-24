@@ -1,6 +1,6 @@
-# L4 deep dive (self-paced) · Ship: a reviewable commit and an image the platform team accepts
+# L4 deep dive (after the session) · Ship: a reviewable commit and an image the platform team accepts
 
-**Self-paced, about 15 minutes, after the L4 primer** (`primer/l4-ship-mini/`). You write no code: every step is
+**After the session, at your own pace, about 15 minutes, after the L4 primer** (`primer/l4-ship-mini/`). You write no code: every step is
 one command, and every step prints how it runs and every `git` and `docker` command, as `$ ...`, before its
 output.
 
@@ -150,7 +150,7 @@ platform team accepts. That's the handover.
 ## ✅ Done with the L4 deep dive
 
 **Later, the write-it-yourself assignment:** `bash lab.sh reset l4` puts the starter `Dockerfile` back, removes
-`.dockerignore` and the twin. Then do L4a and L4b **for real in your own repo**, following `SELF-PACED.md`: a
+`.dockerignore` and the twin. Then do L4a and L4b **for real in your own repo**, following `ASSIGNMENT.md`: a
 branch, `.env` in `.gitignore`, a deliberate commit, a push and a pull request; then the five Dockerfile fixes.
 Check with `bash grade.sh l4`, then write `HANDOVER.md`.
 

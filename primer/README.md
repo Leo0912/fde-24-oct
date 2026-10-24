@@ -2,7 +2,7 @@
 
 These primers are **small, separate warm-ups** for Session 3. Learners run commands and read output; they write no code.
 
-Use them when a topic feels too busy in the full lab and you want the idea first.
+They are the **live lab**: the trainer runs them in the session, and you follow `lab/L1-live.md` … `lab/L4-live.md`.
 
 ## Suggested order
 
@@ -63,6 +63,6 @@ bash run.sh all
 
 ## Best learner flow
 
-- Best sequence: **L1 primer → L2 primer → L3 primer → L4 primer → full lab**.
+- Sequence: **live lab (these primers) → deep dives (`lab/L*-deep-dive.md`) → assignment (`ASSIGNMENT.md`)**.
 - If one topic already feels clear, skip straight to the next one.
-- The primers teach the **why**; the full lab teaches the **how in a real service**.
+- The primers teach the **why**; the deep dives and the assignment show the **how in a real service**.

@@ -1,4 +1,4 @@
-# Session 3 primer: observability and safe audit logs (self-paced L3)
+# Session 3 primer: observability and safe audit logs (live L3)
 
 A **separate, simplified primer** for Session 3, like `../l1-pydantic-mini/` and `../l2-async-fastapi-mini/`.
 Learners run commands and read output; they write no code.
