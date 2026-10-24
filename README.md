@@ -68,11 +68,11 @@ when you've finished the self-paced work.
 ## Option B (fallback): Google Colab
 
 Use this if GitHub or Codespaces is blocked on your laptop (common on company laptops), or your codespace
-won't start. Colab covers **L1, L2 and L3**. It can't run Git or Docker, so watch the L4 demo in class and do
-L4 later in a codespace.
+won't start. Colab runs **the same lab**: the four live primers, then the four deep dives (`bash lab.sh …`). You
+write no code. Colab can't run Docker or open `/docs`, so those steps say so and skip; do them later in a codespace.
 
-1. Open `colab/s03_lab.ipynb` from this repo in Colab (File → Open notebook → GitHub, or upload it).
-2. Runtime → Run all. Edit the cells marked **YOUR CODE**, then re-run the check cell below each one.
+1. Open `colab/s03_lab.ipynb` from this repo in Colab (File → Upload notebook, or File → Open notebook → GitHub).
+2. Run the two **Setup** cells (they install the packages and unpack the lab), then each cell in order.
 
 Colab's runtime storage is temporary: File → Save a copy in Drive.
 
